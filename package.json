@@ -1,0 +1,48 @@
+{
+	"name": "blead2mqtt",
+	"version": "0.3.0",
+	"description": "Command-line tool that scans for BLE (Bluetooth Low Energy) advertisements and publishes them as completely customizable MQTT messages",
+	"keywords": [
+		"Advertisements",
+		"BLE",
+		"Bluetooth",
+		"Bluetooth LE",
+		"Bluetooth Low Energy",
+		"MQTT"
+	],
+	"homepage": "https://oyooyo.github.io/blead2mqtt",
+	"bugs": {
+		"url": "https://github.com/oyooyo/blead2mqtt/issues"
+	},
+	"license": "ISC",
+	"author": {
+		"name": "oyooyo",
+		"url": "https://github.com/oyooyo"
+	},
+	"files": [
+		"*.mjs",
+		"*.js"
+	],
+	"bin": {
+		"blead2mqtt": "./cli.mjs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/oyooyo/blead2mqtt.git"
+	},
+	"scripts": {
+		"create_docs": "jsdoc2md --configure jsdoc_conf.json utils.mjs > utils.md",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"@abandonware/noble": "^1.9.2-11",
+		"argparse": "^2.0.1",
+		"async-mqtt": "^2.6.1"
+	},
+	"engines": {
+		"node": ">=14"
+	},
+	"devDependencies": {
+		"jsdoc-to-markdown": "^6.0.1"
+	}
+}
