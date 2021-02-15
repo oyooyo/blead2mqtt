@@ -59,17 +59,7 @@ See [here](https://github.com/abandonware/noble#running-without-rootsudo-linux-s
 
 ## Usage
 
-When blead2mqtt is executed, it automatically starts scanning for BLE advertisements and publishes received advertisements to the specified MQTT broker. If your MQTT broker does not require authentication, passing the IP address of your MQTT broker to the `blead2mqtt` command is probably sufficient for a first test:
-```sh
-blead2mqtt --host <IP address of your MQTT broker>
-```
-
-To see the received advertisements, subscribe to MQTT topic `blead2mqtt/advertisements`, for example with the `mosquitto_sub` tool if you have that installed:
-```sh
-mosquitto_sub --host <IP address of your MQTT broker> --topic blead2mqtt/advertisements --verbose
-```
-
-The structure and topic of these messages is not fixed, but can be fully customized.
+(ToDo)
 
 ## Configuration
 
