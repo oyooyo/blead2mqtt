@@ -100,23 +100,24 @@ The `advertisement` parameter that your `transform` function will be called with
     "0000FE95-0000-1000-8000-00805F9B34FB": [48,88,91,5,1,188,154,120,86,52,18,40,1,0]
   },
   "service_uuids": [ // An array of canonical service UUIDs that the peripheral advertises
-		"0000FE95-0000-1000-8000-00805F9B34FB",
-		"00001234-0000-1000-8000-00805F9B34FB",
+    "0000FE95-0000-1000-8000-00805F9B34FB",
+    "00001234-0000-1000-8000-00805F9B34FB",
   ],
   "solicitation_service_uuids":[ // An array of canonical solicitation service UUIDs (hardly ever used)
-		"00002345-0000-1000-8000-00805F9B34FB",
-		"00005678-0000-1000-8000-00805F9B34FB",
+    "00002345-0000-1000-8000-00805F9B34FB",
+    "00005678-0000-1000-8000-00805F9B34FB",
   ],
   "timestamp": 1613388810338, // Timestamp when the advertisement was received, in milliseconds since the epoch
   "tx_power_level": null, // The TX power level, as an integer, but usually this will be null
 }
 ```
 
-For each MQTT message that shall be published when an advertisement was received, the `transform` function must return an object with `topic` and `payload` properties (and optional `qos` and `retain` properties), for example:
+For each MQTT message that shall be published when an advertisement was received, the `transform` function must return an object with `topic` and `payload` properties (and optional `qos` and `retain` properties), wrapped in an array. For example:
 
 ```js
-{topic:"blead2mqtt/scanned_peripheral_address", payload:"12:45:56:78:9A:BC"}
-{topic:"blead2mqtt/last_advertisement_timestamp", payload:123456789, retain:true}
+[
+  {topic:"blead2mqtt/scanned_peripheral_address", payload:"12:45:56:78:9A:BC"},
+  {topic:"blead2mqtt/last_advertisement_timestamp", payload:123456789, retain:true},
 ]
 ```
 
