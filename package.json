@@ -1,6 +1,6 @@
 {
 	"name": "blead2mqtt",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"description": "Command-line tool that scans for BLE (Bluetooth Low Energy) advertisements and publishes them as completely customizable MQTT messages",
 	"keywords": [
 		"Advertisements",
