@@ -69,9 +69,10 @@ export default {
 	create_transform_function: (utils, parameters) => {
 		return utils.create_limited_frequency_proxy_transform(parameters.interval, (advertisement) => {
 			const {address, ...other} = advertisement;
+			const known_data = utils.parse_known_data(advertisement);
 			const data = {
 				...other,
-				known_data: utils.parse_known_data(advertisement),
+				known_data: known_data,
 			};
 			return [
 				{

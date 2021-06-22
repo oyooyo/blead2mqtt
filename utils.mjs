@@ -55,7 +55,7 @@ const parse_known_data = ((advertisement) => ({
 }));
 
 const parse_mj_ht_v1_decimal_value = ((v0, v1) =>
-	((((v1 << 8) + v0) - ((v1 < 128) ? 0 : 65536))/ 10)
+	((((v1 << 8) + v0) - ((v1 < 128) ? 0 : 65536)) / 10)
 );
 
 const parse_mj_ht_v1_service_fe95_data = (data) => {
@@ -83,7 +83,7 @@ const parse_mj_ht_v1_service_fe95_data = (data) => {
 };
 
 const parse_mj_ht_v1_advertisement = ((advertisement) =>
-	((advertisement.name === 'MJ_HT_V1')
+	((advertisement.service_data.hasOwnProperty('0000FE95-0000-1000-8000-00805F9B34FB'))
 		? parse_mj_ht_v1_service_fe95_data(advertisement.service_data['0000FE95-0000-1000-8000-00805F9B34FB'])
 		: null
 	)
